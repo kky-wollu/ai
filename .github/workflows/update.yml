@@ -2,60 +2,203 @@ name: 自动更新广告拦截模块
 
 on:
   schedule:
-    # 每天运行两次：凌晨2点和下午2点
-    - cron: '0 2,14 * * *'
+    - cron: '0 2,14 * * *'  # 每天 UTC 时间 2:00 和 14:00 运行
   workflow_dispatch:  # 允许手动触发
+  push:
+    branches: [ main, master ]
 
 jobs:
   update-module:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pages: write
+      actions: read
     
     steps:
     - name: 检出代码
       uses: actions/checkout@v3
-      
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: 显示环境信息
+      run: |
+        echo "🎯 运行在: ${{ runner.os }}"
+        echo "📂 工作目录: $(pwd)"
+        echo "📋 Python 版本:"
+        python3 --version
+        echo "📁 目录内容:"
+        ls -la
+        echo "🔍 检查 Python 脚本:"
+        if [ -f "update_module.py" ]; then
+          echo "✅ update_module.py 存在"
+          echo "文件权限:"
+          ls -l update_module.py
+          echo "文件MD5:"
+          md5sum update_module.py
+        else
+          echo "❌ update_module.py 不存在"
+          exit 1
+        fi
+        
     - name: 设置Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
+        python-version: '3.11'
+        cache: 'pip'
         
-    - name: 安装依赖
+    - name: 升级pip并安装依赖
       run: |
-        pip install requests
+        python3 -m pip install --upgrade pip
+        pip3 install requests
+        echo "✅ 依赖安装完成"
+        pip3 list | grep requests
         
     - name: 运行更新脚本
+      id: run_script
       run: |
-        python update_module.py
+        echo "▶️ 开始执行 Python 脚本..."
+        echo "当前时间: $(date)"
+        
+        # 运行脚本并捕获输出
+        python3 update_module.py 2>&1 | tee script_output.log
+        EXIT_CODE=${PIPESTATUS[0]}
+        
+        echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
+        
+        if [ $EXIT_CODE -ne 0 ]; then
+          echo "❌ 脚本执行失败，退出码: $EXIT_CODE"
+          echo "最后20行输出:"
+          tail -20 script_output.log
+          exit $EXIT_CODE
+        fi
+        echo "✅ 脚本执行成功"
+        
+    - name: 验证生成的文件
+      run: |
+        echo "🔍 检查生成的文件..."
+        
+        # 检查文件是否存在
+        if [ ! -f "Universal_AdBlock.sgmodule" ]; then
+          echo "❌ 文件 Universal_AdBlock.sgmodule 未生成"
+          echo "当前目录文件列表:"
+          ls -la
+          exit 1
+        fi
+        
+        echo "✅ 文件已生成"
+        echo "文件信息:"
+        ls -lh Universal_AdBlock.sgmodule
+        
+        echo "文件预览 (前20行):"
+        head -n 20 Universal_AdBlock.sgmodule
+        
+        echo "规则统计:"
+        TOTAL_RULES=$(grep -c "^DOMAIN\|^AND\|^URL-REGEX\|^IP-CIDR" Universal_AdBlock.sgmodule || echo "0")
+        echo "总规则数: $TOTAL_RULES"
+        
+        # 检查格式一致性
+        echo "格式检查:"
+        DOMAIN_COUNT=$(grep -c "^DOMAIN," Universal_AdBlock.sgmodule || echo "0")
+        AND_COUNT=$(grep -c "^AND," Universal_AdBlock.sgmodule || echo "0")
+        URL_REGEX_COUNT=$(grep -c "^URL-REGEX," Universal_AdBlock.sgmodule || echo "0")
+        IP_CIDR_COUNT=$(grep -c "^IP-CIDR," Universal_AdBlock.sgmodule || echo "0")
+        
+        echo "  DOMAIN规则: $DOMAIN_COUNT"
+        echo "  AND规则: $AND_COUNT"
+        echo "  URL-REGEX规则: $URL_REGEX_COUNT"
+        echo "  IP-CIDR规则: $IP_CIDR_COUNT"
         
     - name: 检查是否有更新
       id: check_changes
       run: |
-        if git diff --quiet Universal_AdBlock.sgmodule; then
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        
+        # 检查是否有未跟踪的文件
+        git add -N Universal_AdBlock.sgmodule 2>/dev/null || true
+        
+        # 检查文件变化
+        git add Universal_AdBlock.sgmodule
+        if git diff --staged --quiet; then
           echo "changed=false" >> $GITHUB_OUTPUT
+          echo "ℹ️ 文件无变化，跳过提交"
+          
+          # 显示当前文件的git状态
+          git status
         else
           echo "changed=true" >> $GITHUB_OUTPUT
+          echo "🔄 文件有更新，准备提交"
+          echo "变更内容:"
+          git diff --staged
+          
+          # 显示变更统计
+          git diff --staged --stat
         fi
         
-    - name: 提交和推送更改
+    - name: 提交更改
       if: steps.check_changes.outputs.changed == 'true'
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add Universal_AdBlock.sgmodule
-        git commit -m "自动更新模块 - $(date '+%Y-%m-%d %H:%M:%S')"
-        git push
+        # 提交更改
+        git commit -m "🔄 自动更新广告模块 $(date '+%Y-%m-%d %H:%M:%S')
+
+        更新内容:
+        - 同步上游最新规则
+        - 合并自定义广告规则
+        - 运行ID: ${{ github.run_id }}"
         
-    - name: 创建Release（可选）
+        # 推送到仓库
+        git push
+        echo "✅ 更改已提交并推送"
+        
+        # 显示提交信息
+        git show --stat HEAD
+        
+    - name: 创建Release
       if: steps.check_changes.outputs.changed == 'true'
       uses: softprops/action-gh-release@v1
       with:
         files: Universal_AdBlock.sgmodule
         tag_name: v${{ github.run_number }}
-        name: 模块更新 v${{ github.run_number }}
+        name: 广告拦截模块更新 v${{ github.run_number }}
         body: |
-          ### 自动更新
+          ### 📦 自动更新广告拦截模块
+          
+          **更新信息：**
           - 更新时间：${{ github.event.repository.updated_at }}
-          - 基于原始模块更新
+          - 运行ID：${{ github.run_id }}
+          - 触发方式：${{ github.event_name }}
+          - 提交者：GitHub Actions Bot
+          
+          **文件信息：**
+          - 文件名：Universal_AdBlock.sgmodule
+          - 格式：Surge/Shadowrocket 模块
+          - 适用：广告拦截
+          
+          **规则统计：**
+          - 规则总数：$(grep -c "^DOMAIN\|^AND\|^URL-REGEX\|^IP-CIDR" Universal_AdBlock.sgmodule || echo "0")
+          
+          **更新内容：**
+          - 同步上游最新规则
+          - 合并自定义广告规则
+          - 保持原始模块格式
+          
+          **使用方式：**
+          在 Shadowrocket 中订阅：
+          ```
+          https://raw.githubusercontent.com/${{ github.repository }}/main/Universal_AdBlock.sgmodule
+          ```
+        generate_release_notes: true
+        
+    - name: 上传生成的文件作为Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: adblock-module
+        path: Universal_AdBlock.sgmodule
+        retention-days: 7
+        
+    - name: 清理临时文件
+      if: always()
+      run: |
+        rm -f script_output.log
+        echo "🧹 临时文件已清理"
