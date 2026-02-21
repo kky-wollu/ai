@@ -2,31 +2,30 @@ name: Update AdBlock Filter
 
 on:
   schedule:
-    # 每天运行两次，北京时间凌晨2点和下午2点
-    - cron: '0 18 * * *'
-    - cron: '0 6 * * *'
-  workflow_dispatch:  # 允许手动触发
+    - cron: '0 */12 * * *'  # 每12小时
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - uses: actions/checkout@v3
       
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-        
-    - name: Download and merge filters
-      run: python merge_filters.py
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
       
-    - name: Commit and push if changed
-      run: |
-        git config --global user.name 'GitHub Actions'
-        git config --global user.email 'actions@github.com'
-        git add My_AdBlock_No_Google.sgmodule
-        git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update filter: $(date +'%Y-%m-%d %H:%M:%S')"
-        git push
+      - name: Install requests
+        run: pip install requests
+      
+      - name: Run merge script
+        run: python merge_filters.py
+      
+      - name: Commit and push
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add My_AdBlock_No_Google.sgmodule latest_status.txt
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto update: $(date +'%Y-%m-%d %H:%M:%S')"
+          git push
