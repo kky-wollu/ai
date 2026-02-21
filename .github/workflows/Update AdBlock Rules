@@ -1,0 +1,194 @@
+name: Update AdBlock Rules
+
+on:
+  schedule:
+    # 每天凌晨2点运行
+    - cron: '0 2 * * *'
+  # 允许手动触发
+  workflow_dispatch:
+  # 当源文件更新时触发（需要配置webhook）
+  push:
+    branches:
+      - main
+    paths:
+      - 'My_AdBlock_No_Google.sgmodule'
+
+jobs:
+  update-rules:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Download and process rules
+      run: |
+        # 创建临时文件
+        TEMP_FILE=$(mktemp)
+        FINAL_RULE="Universal_Ad_Vendors_Block.sgmodule"
+        
+        echo "正在下载规则文件..."
+        # 下载远程规则文件
+        curl -s -o "$TEMP_FILE" "https://raw.githubusercontent.com/kky-wollu/ai/refs/heads/v5/My_AdBlock_No_Google.sgmodule"
+        
+        if [ ! -s "$TEMP_FILE" ]; then
+          echo "错误：下载的规则文件为空"
+          exit 1
+        fi
+        
+        echo "成功下载规则文件"
+        
+        # 创建新的规则文件
+        cat > "$FINAL_RULE" << 'EOF'
+#!name=Universal Ad Vendors Block
+#!desc=通用广告服务商/竞价平台/统计埋点拦截（偏保守，降低误杀）
+#!author=Xiaochuan
+#!category=AdBlock
+
+[Rule]
+
+# =========================
+# 1) 国内常见广告/竞价平台
+# =========================
+
+# Tencent GDT / 广点通
+DOMAIN-SUFFIX,gdt.qq.com,REJECT
+DOMAIN-SUFFIX,e.qq.com,REJECT
+
+# 1RTB
+DOMAIN-SUFFIX,1rtb.com,REJECT
+DOMAIN-SUFFIX,1rtb.net,REJECT
+
+# 穿山甲/巨量（Bytedance）
+DOMAIN-SUFFIX,pangle.io,REJECT
+DOMAIN-SUFFIX,ctobsnssdk.com,REJECT
+DOMAIN-SUFFIX,byteoversea.com,REJECT
+
+# 快手广告
+DOMAIN-SUFFIX,kuaishou.com,REJECT
+DOMAIN-SUFFIX,ksadks.com,REJECT
+DOMAIN-SUFFIX,e.kuaishou.com,REJECT
+
+# 百度联盟/统计（保守拦常见前缀域）
+DOMAIN-SUFFIX,baidu.com,REJECT-TINYGIF
+DOMAIN-SUFFIX,bdstatic.com,REJECT-TINYGIF
+
+# 友盟/阿里统计
+DOMAIN-SUFFIX,umeng.com,REJECT
+DOMAIN-SUFFIX,umengcloud.com,REJECT
+
+# TalkingData
+DOMAIN-SUFFIX,talkingdata.com,REJECT
+
+# AppsFlyer / Adjust / Branch / Kochava / Firebase 归因&追踪
+DOMAIN-SUFFIX,appsflyer.com,REJECT
+DOMAIN-SUFFIX,adjust.com,REJECT
+DOMAIN-SUFFIX,branch.io,REJECT
+DOMAIN-SUFFIX,kochava.com,REJECT
+DOMAIN-SUFFIX,app-measurement.com,REJECT
+DOMAIN-SUFFIX,google-analytics.com,REJECT
+
+# =========================
+# 2) 国外常见广告网络
+# =========================
+
+# Google Ads/DoubleClick/AdServices
+DOMAIN-SUFFIX,doubleclick.net,REJECT
+DOMAIN-SUFFIX,googlesyndication.com,REJECT
+DOMAIN-SUFFIX,googleadservices.com,REJECT
+DOMAIN-SUFFIX,adservice.google.com,REJECT
+
+# Meta (Facebook) Ads/Analytics
+DOMAIN-SUFFIX,facebook.com,REJECT-TINYGIF
+DOMAIN-SUFFIX,facebook.net,REJECT-TINYGIF
+
+# Unity Ads / Vungle / AppLovin / IronSource / Chartboost / InMobi
+DOMAIN-SUFFIX,unityads.unity3d.com,REJECT
+DOMAIN-SUFFIX,ads.vungle.com,REJECT
+DOMAIN-SUFFIX,applovin.com,REJECT
+DOMAIN-SUFFIX,ironsrc.com,REJECT
+DOMAIN-SUFFIX,chartboost.com,REJECT
+DOMAIN-SUFFIX,inmobi.com,REJECT
+
+# MoPub (旧)/Rubicon/Taboola/Outbrain
+DOMAIN-SUFFIX,rubiconproject.com,REJECT
+DOMAIN-SUFFIX,taboola.com,REJECT
+DOMAIN-SUFFIX,outbrain.com,REJECT
+
+# =========================
+# 3) 从远程规则提取的规则
+# =========================
+
+EOF
+
+        echo "正在提取远程规则内容..."
+        # 提取规则部分（去除可能存在的元数据）
+        # 这里假设远程文件主要包含规则内容
+        cat "$TEMP_FILE" >> "$FINAL_RULE"
+        
+        # 添加爱思助手规则
+        cat >> "$FINAL_RULE" << 'EOF'
+
+#!name=爱思助手(i4.cn) 去开屏广告
+#!desc=拦截 i4.cn 开屏广告配置/素材/上报（需要开启HTTPS解密）
+#!author=小川
+#!date=2026-02-20
+
+[MITM]
+hostname = %APPEND% pub-conf-m.i4.cn,cl-m.i4.cn,d.image.i4.cn,search-app-m.i4.cn,list-app-m.i4.cn
+
+[URL Rewrite]
+# 1) 开屏广告/广告位配置下发（最关键）
+^https?:\/\/pub-conf-m\.i4\.cn\/.* - reject
+^https?:\/\/(search-app-m|list-app-m)\.i4\.cn\/.*(splash|launch|ad|ads|advert|banner).* - reject
+
+# 2) 开屏广告图片/素材（你日志里大量 adInfo/image/original）
+^http:\/\/d\.image\.i4\.cn\/adInfo\/image\/original\/.* - reject
+^https?:\/\/d\.image\.i4\.cn\/adInfo\/image\/original\/.* - reject
+^https?:\/\/d\.image\.i4\.cn\/.*\/bannerMenuItem\/.* - reject
+
+# 3) 曝光/点击统计上报（可选但建议拦）
+^https?:\/\/cl-m\.i4\.cn\/.* - reject
+
+# 4) 你截图里出现的直连 IP 请求（疑似广告/追踪）
+^http:\/\/121\.5\.84\.85\/d4\?.* - reject
+EOF
+        
+        echo "规则文件处理完成"
+        
+    - name: Check for changes and commit
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        
+        # 检查是否有变化
+        if git diff --quiet; then
+          echo "没有检测到变化，跳过提交"
+        else
+          echo "检测到变化，提交更新"
+          git add Universal_Ad_Vendors_Block.sgmodule
+          git commit -m "Auto-update AdBlock rules $(date +'%Y-%m-%d %H:%M:%S')"
+          git push
+          
+          # 创建或更新release
+          TAG_NAME="v$(date +'%Y%m%d')"
+          git tag -f "$TAG_NAME"
+          git push -f origin "$TAG_NAME"
+        fi
+        
+    - name: Create/Update Release
+      if: success()
+      uses: softprops/action-gh-release@v1
+      with:
+        name: "AdBlock Rules $(date +'%Y-%m-%d')"
+        tag_name: "latest"
+        files: Universal_Ad_Vendors_Block.sgmodule
+        prerelease: false
+        token: ${{ secrets.GITHUB_TOKEN }}
+      continue-on-error: true
