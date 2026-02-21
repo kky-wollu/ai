@@ -1,4 +1,4 @@
-name: 每日更新飞猪广告规则
+name: 每日合并纯净广告规则
 
 on:
   schedule:
@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pages: write
     
     steps:
       - name: 检出仓库代码
@@ -24,23 +23,13 @@ jobs:
       - name: 安装依赖
         run: pip install requests
       
-      - name: 运行提取脚本
-        run: python extract_fliggy.py
+      - name: 运行合并脚本
+        run: python merge_adblock.py
       
-      - name: 检查是否有更新
-        id: check_changes
+      - name: 提交更新
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add fliggy.module
-          if git diff --staged --quiet; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-          else
-            echo "changed=true" >> $GITHUB_OUTPUT
-          fi
-      
-      - name: 提交更新
-        if: steps.check_changes.outputs.changed == 'true'
-        run: |
-          git commit -m "自动更新飞猪广告规则 $(date +'%Y-%m-%d')"
+          git add adblock_clean.module
+          git diff --staged --quiet || git commit -m "自动合并广告规则 $(date +'%Y-%m-%d')"
           git push
