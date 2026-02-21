@@ -6,16 +6,17 @@ import os
 # 配置
 SOURCE_URL = "https://raw.githubusercontent.com/kky-wollu/ai/refs/heads/v5/My_AdBlock_No_Google.sgmodule"
 OUTPUT_FILE = "Universal_AdBlock.sgmodule"
-CUSTOM_RULES_FILE = "custom_rules.txt"  # 存储你提供的自定义规则
 
 def fetch_source_content():
     """获取原始模块内容"""
     try:
+        print(f"正在获取源文件: {SOURCE_URL}")
         response = requests.get(SOURCE_URL)
         response.raise_for_status()
+        print("✅ 源文件获取成功")
         return response.text
     except Exception as e:
-        print(f"获取源文件失败: {e}")
+        print(f"❌ 获取源文件失败: {e}")
         return None
 
 def extract_rules(content):
@@ -26,7 +27,9 @@ def extract_rules(content):
         # 过滤掉空行和注释行
         rules_lines = [line.strip() for line in rules.split('\n') 
                       if line.strip() and not line.strip().startswith('#')]
+        print(f"✅ 提取到 {len(rules_lines)} 条源规则")
         return '\n'.join(rules_lines)
+    print("⚠️ 未找到[Rule]部分")
     return ""
 
 def get_custom_rules():
@@ -98,16 +101,34 @@ DOMAIN-SUFFIX,inmobi.com,REJECT
 DOMAIN-SUFFIX,rubiconproject.com,REJECT
 DOMAIN-SUFFIX,taboola.com,REJECT
 DOMAIN-SUFFIX,outbrain.com,REJECT"""
+    
+    custom_lines = [line.strip() for line in custom_rules.split('\n') if line.strip()]
+    print(f"✅ 加载到 {len(custom_lines)} 条自定义规则")
     return custom_rules
 
 def generate_new_module(source_rules, custom_rules):
     """生成新的模块文件"""
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    # 合并规则（去重）
-    all_rules = source_rules + '\n' + custom_rules
-    rules_set = set(all_rules.split('\n'))
-    merged_rules = '\n'.join(sorted(rules_set))
+    # 合并规则
+    if source_rules:
+        all_rules = source_rules + '\n' + custom_rules
+    else:
+        all_rules = custom_rules
+    
+    # 去重（但保留注释）
+    rule_lines = []
+    seen_rules = set()
+    
+    for line in all_rules.split('\n'):
+        line = line.rstrip()
+        if line.startswith('#') or not line:
+            rule_lines.append(line)
+        elif line not in seen_rules:
+            seen_rules.add(line)
+            rule_lines.append(line)
+    
+    merged_rules = '\n'.join(rule_lines)
     
     header = f"""#!name=Universal Ad Vendors Block
 #!desc=通用广告服务商/竞价平台/统计埋点拦截（偏保守，降低误杀）
@@ -122,34 +143,51 @@ def generate_new_module(source_rules, custom_rules):
     return header + merged_rules
 
 def main():
-    print("开始更新模块...")
+    print("=" * 50)
+    print("🚀 开始更新广告拦截模块")
+    print("=" * 50)
+    
+    # 获取当前工作目录
+    current_dir = os.getcwd()
+    print(f"📁 当前工作目录: {current_dir}")
     
     # 获取源内容
     source_content = fetch_source_content()
     if not source_content:
+        print("❌ 无法获取源文件，退出程序")
         return
     
     # 提取规则
     source_rules = extract_rules(source_content)
-    source_rule_count = len(source_rules.split('\n'))
-    print(f"从源模块提取到 {source_rule_count} 条规则")
     
     # 获取自定义规则
     custom_rules = get_custom_rules()
-    custom_rule_count = len(custom_rules.split('\n'))
-    print(f"自定义规则 {custom_rule_count} 条")
     
     # 生成新模块
+    print("🔄 正在合并规则...")
     new_module = generate_new_module(source_rules, custom_rules)
-    total_rules = len(new_module.split('\n')) - 4  # 减去header行数
+    
+    # 统计规则数量
+    rule_count = len([line for line in new_module.split('\n') 
+                     if line.strip() and not line.strip().startswith('#') and not line.strip().startswith('[Rule]')])
     
     # 保存文件
-    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+    output_path = os.path.join(current_dir, OUTPUT_FILE)
+    with open(output_path, 'w', encoding='utf-8') as f:
         f.write(new_module)
     
     print(f"✅ 模块生成成功！")
-    print(f"📊 总规则数：{total_rules}")
-    print(f"📁 输出文件：{OUTPUT_FILE}")
+    print(f"📊 总规则数：{rule_count}")
+    print(f"📁 输出文件：{output_path}")
+    
+    # 验证文件是否存在
+    if os.path.exists(output_path):
+        file_size = os.path.getsize(output_path)
+        print(f"📦 文件大小：{file_size} 字节")
+    else:
+        print("⚠️ 警告：文件可能未成功保存")
+    
+    print("=" * 50)
 
 if __name__ == "__main__":
     main()
