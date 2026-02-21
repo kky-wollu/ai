@@ -4,6 +4,7 @@
 import requests
 import re
 from datetime import datetime
+import os
 
 # 源文件地址
 SOURCES = [
@@ -31,15 +32,21 @@ def extract_fliggy_rules(content):
     """从内容中提取包含飞猪关键词的行"""
     rules = []
     for line in content.split('\n'):
+        line = line.strip()
+        if not line or line.startswith('#'):
+            continue
+            
         line_lower = line.lower()
         for keyword in FLIGGY_KEYWORDS:
             if keyword in line_lower or re.search(keyword, line_lower):
-                if line.strip() and not line.startswith('#'):
-                    rules.append(line.strip())
+                # 只提取 Rule 部分
+                if 'reject' in line_lower or 'reject' in line:
+                    rules.append(line)
                 break
     return rules
 
 def main():
+    print("开始提取飞猪广告规则...")
     all_rules = []
     
     for source in SOURCES:
@@ -55,11 +62,11 @@ def main():
         except Exception as e:
             print(f"  失败: {e}")
     
-    # 去重
+    # 去重并排序
     all_rules = list(set(all_rules))
     all_rules.sort()
     
-    # 生成模块文件
+    # 生成模块文件内容
     module_content = f"""#!name = 飞猪广告拦截（每日自动更新）
 #!desc = 自动同步自 fmz200 和 zirawell 两位作者的源文件
 #!version = {datetime.now().strftime('%Y.%m.%d')}
@@ -79,11 +86,14 @@ hostname = %APPEND% *.fliggy.com, *.alitrip.com, *.taobaotrip.com
 skip-server = *.googlevideo.com, *.youtube.com, *.googleapis.com
 """
     
-    with open('fliggy.module', 'w', encoding='utf-8') as f:
+    # 写入文件到当前目录
+    file_path = 'fliggy.module'
+    with open(file_path, 'w', encoding='utf-8') as f:
         f.write(module_content)
     
     print(f"\n✅ 完成！共提取 {len(all_rules)} 条去重规则")
-    print(f"已保存到 fliggy.module")
+    print(f"已保存到 {file_path}")
+    print(f"文件绝对路径: {os.path.abspath(file_path)}")
 
 if __name__ == '__main__':
     main()
