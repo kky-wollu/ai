@@ -1,0 +1,61 @@
+name: 自动更新广告拦截模块
+
+on:
+  schedule:
+    # 每天运行两次：凌晨2点和下午2点
+    - cron: '0 2,14 * * *'
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  update-module:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v3
+      
+    - name: 设置Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        
+    - name: 安装依赖
+      run: |
+        pip install requests
+        
+    - name: 运行更新脚本
+      run: |
+        python update_module.py
+        
+    - name: 检查是否有更新
+      id: check_changes
+      run: |
+        if git diff --quiet Universal_AdBlock.sgmodule; then
+          echo "changed=false" >> $GITHUB_OUTPUT
+        else
+          echo "changed=true" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: 提交和推送更改
+      if: steps.check_changes.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add Universal_AdBlock.sgmodule
+        git commit -m "自动更新模块 - $(date '+%Y-%m-%d %H:%M:%S')"
+        git push
+        
+    - name: 创建Release（可选）
+      if: steps.check_changes.outputs.changed == 'true'
+      uses: softprops/action-gh-release@v1
+      with:
+        files: Universal_AdBlock.sgmodule
+        tag_name: v${{ github.run_number }}
+        name: 模块更新 v${{ github.run_number }}
+        body: |
+          ### 自动更新
+          - 更新时间：${{ github.event.repository.updated_at }}
+          - 基于原始模块更新
