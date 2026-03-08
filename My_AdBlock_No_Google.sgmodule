@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-03-08 02:43:44
-#!desc=• 规则数量：1561
+#!desc=• 最后更新：2026-03-08 13:02:44
+#!desc=• 规则数量：1563
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -258,6 +258,8 @@ IP-CIDR, 183.201.213.194/24, REJECT, no-resolve, pre-matching
 IP-CIDR, 186.76.76.200/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.107.1.0/24, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.107.63.154/32, REJECT, no-resolve, pre-matching
+IP-CIDR, 203.119.238.164/32, REJECT, no-resolve, pre-matching
+IP-CIDR, 203.119.238.63/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 210.13.85.204/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 212.129.220.0/24, REJECT, no-resolve, pre-matching
 IP-CIDR, 47.110.187.87/32, REJECT, no-resolve, pre-matching
