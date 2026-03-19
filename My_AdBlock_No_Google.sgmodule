@@ -2,7 +2,7 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-03-18 13:27:48
+#!desc=• 最后更新：2026-03-19 02:49:34
 #!desc=• 规则数量：1563
 #!author=Auto Build
 #!tag=去广告
@@ -1133,7 +1133,6 @@ DOMAIN-SUFFIX, i.sng.link, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, iad-apple.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, iadmusicmat.music.126.net, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, iadmusicmatvideo.music.126.net, REJECT, extended-matching, pre-matching
-DOMAIN-SUFFIX, iadsdk.apple.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, ic.snssdk.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, idm-su.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, iebar.baidu.com, REJECT, extended-matching, pre-matching
@@ -1535,6 +1534,7 @@ DOMAIN-KEYWORD, collectionpv.che168.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, dns.alidns.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, dnspod.meituan.httpdns, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, gdtimg.com, REJECT, extended-matching, pre-matching
+DOMAIN-KEYWORD, iadsdk.apple.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, iflyad.bj.openstorage.cn, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, img.adnyg.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, inappcheck, REJECT, extended-matching, pre-matching
