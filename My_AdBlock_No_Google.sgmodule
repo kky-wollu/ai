@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-03-27 02:56:13
-#!desc=• 规则数量：1564
+#!desc=• 最后更新：2026-03-27 13:20:59
+#!desc=• 规则数量：1566
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -387,6 +387,7 @@ DOMAIN, amdc.alipay.com, REJECT, extended-matching, pre-matching
 DOMAIN, amdc.m.youku.com, REJECT, extended-matching, pre-matching
 DOMAIN, analytics-api.smzdm.com, REJECT, extended-matching, pre-matching
 DOMAIN, analytics.95516.com, REJECT, extended-matching, pre-matching
+DOMAIN, analytics.tuhu.com, REJECT, extended-matching, pre-matching
 DOMAIN, analytics.twitter.com, REJECT, extended-matching, pre-matching
 DOMAIN, analytics.umetrip.com, REJECT, extended-matching, pre-matching
 DOMAIN, api-adservices.apple.com, REJECT, extended-matching, pre-matching
@@ -694,6 +695,7 @@ DOMAIN, t7z.cupid.iqiyi.com, REJECT, extended-matching, pre-matching
 DOMAIN, t7z.cupid.ptqy.gitv.tv, REJECT, extended-matching, pre-matching
 DOMAIN, ta-a.pinduoduo.com, REJECT, extended-matching, pre-matching
 DOMAIN, ta.pinduoduo.com, REJECT, extended-matching, pre-matching
+DOMAIN, ta.tuhu.cn, REJECT, extended-matching, pre-matching
 DOMAIN, ta.yangkeduo.com, REJECT, extended-matching, pre-matching
 DOMAIN, tcpgateway-sgp-trip.trip.com, REJECT, extended-matching, pre-matching
 DOMAIN, th-a.pinduoduo.com, REJECT, extended-matching, pre-matching
