@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-03-26 13:43:21
-#!desc=• 规则数量：1563
+#!desc=• 最后更新：2026-03-27 02:56:13
+#!desc=• 规则数量：1564
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -566,6 +566,7 @@ DOMAIN, livewebbs2.msstatic.com, REJECT, extended-matching, pre-matching
 DOMAIN, livewebbs2pcdn.msstatic.com, REJECT, extended-matching, pre-matching
 DOMAIN, log-verify.mob.com, REJECT, extended-matching, pre-matching
 DOMAIN, log.17gwx.com, REJECT, extended-matching, pre-matching
+DOMAIN, log.cmbchina.com, REJECT, extended-matching, pre-matching
 DOMAIN, log.tagtic.cn, REJECT, extended-matching, pre-matching
 DOMAIN, log.web.kugou.com, REJECT, extended-matching, pre-matching
 DOMAIN, log.ycapp.yiche.com, REJECT, extended-matching, pre-matching
