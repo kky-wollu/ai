@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-04-01 13:51:35
-#!desc=• 规则数量：1570
+#!desc=• 最后更新：2026-04-02 02:51:30
+#!desc=• 规则数量：1569
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -462,7 +462,6 @@ DOMAIN, dig.bdurl.net, REJECT, extended-matching, pre-matching
 DOMAIN, dig.zjurl.cn, REJECT, extended-matching, pre-matching
 DOMAIN, dm.bytedance.com, REJECT, extended-matching, pre-matching
 DOMAIN, dm.pstatp.com, REJECT, extended-matching, pre-matching
-DOMAIN, dns.jd.com, REJECT, extended-matching, pre-matching
 DOMAIN, dns.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN, dns.weixin.qq.com.cn, REJECT, extended-matching, pre-matching
 DOMAIN, dolphin.caixin.com, REJECT, extended-matching, pre-matching
