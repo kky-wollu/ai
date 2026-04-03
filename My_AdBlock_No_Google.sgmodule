@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-04-03 02:53:56
-#!desc=• 规则数量：1569
+#!desc=• 最后更新：2026-04-03 13:18:15
+#!desc=• 规则数量：1575
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -436,6 +436,7 @@ DOMAIN, bigdata-behaviordata.189.cn, REJECT, extended-matching, pre-matching
 DOMAIN, bootpreload.uve.weibo.com, REJECT, extended-matching, pre-matching
 DOMAIN, bsync3-normal.zijieapi.com, REJECT, extended-matching, pre-matching
 DOMAIN, business.msstatic.com, REJECT, extended-matching, pre-matching
+DOMAIN, cactus.jd.com, REJECT, extended-matching, pre-matching
 DOMAIN, cad.youku.com, REJECT, extended-matching, pre-matching
 DOMAIN, collect.hnair.com, REJECT, extended-matching, pre-matching
 DOMAIN, collect.xiaopeng.com, REJECT, extended-matching, pre-matching
@@ -462,6 +463,7 @@ DOMAIN, dig.bdurl.net, REJECT, extended-matching, pre-matching
 DOMAIN, dig.zjurl.cn, REJECT, extended-matching, pre-matching
 DOMAIN, dm.bytedance.com, REJECT, extended-matching, pre-matching
 DOMAIN, dm.pstatp.com, REJECT, extended-matching, pre-matching
+DOMAIN, dns.jd.com, REJECT, extended-matching, pre-matching
 DOMAIN, dns.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN, dns.weixin.qq.com.cn, REJECT, extended-matching, pre-matching
 DOMAIN, dolphin.caixin.com, REJECT, extended-matching, pre-matching
@@ -482,6 +484,7 @@ DOMAIN, encounter.bz.mgtv.com, REJECT, extended-matching, pre-matching
 DOMAIN, et.tanx.com, REJECT, extended-matching, pre-matching
 DOMAIN, et.ykccn.com, REJECT, extended-matching, pre-matching
 DOMAIN, etl.xlmc.sandai.net, REJECT, extended-matching, pre-matching
+DOMAIN, ex.m.jd.com, REJECT, extended-matching, pre-matching
 DOMAIN, f74f7f7765f8a2f6.ngaa.net.cn, REJECT, extended-matching, pre-matching
 DOMAIN, feed-image.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN, feedback-c.zijieapi.com, REJECT, extended-matching, pre-matching
@@ -585,6 +588,7 @@ DOMAIN, m.meitun.com, REJECT, extended-matching, pre-matching
 DOMAIN, m.pinduoduo.net, REJECT, extended-matching, pre-matching
 DOMAIN, mall-dsp2.qinlinkeji.com, REJECT, extended-matching, pre-matching
 DOMAIN, mallapi2.qinlinkeji.com, REJECT, extended-matching, pre-matching
+DOMAIN, mars.jd.com, REJECT, extended-matching, pre-matching
 DOMAIN, mazu.m.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN, mbads.paas.cmbchina.com, REJECT, extended-matching, pre-matching
 DOMAIN, mc.tencentmusic.com, REJECT, extended-matching, pre-matching
@@ -598,6 +602,7 @@ DOMAIN, meta.pinduoduo.com, REJECT, extended-matching, pre-matching
 DOMAIN, meta.yangkeduo.com, REJECT, extended-matching, pre-matching
 DOMAIN, metrics.apple.com, REJECT, extended-matching, pre-matching
 DOMAIN, minfo.wps.cn, REJECT, extended-matching, pre-matching
+DOMAIN, mllog.jd.com, REJECT, extended-matching, pre-matching
 DOMAIN, mob.bz.mgtv.com, REJECT, extended-matching, pre-matching
 DOMAIN, mobad.ijinshan.com, REJECT, extended-matching, pre-matching
 DOMAIN, mobads-logs.baidu.com, REJECT, extended-matching, pre-matching
@@ -626,6 +631,7 @@ DOMAIN, open.e.kuaishou.com, REJECT, extended-matching, pre-matching
 DOMAIN, open.kuaishou.com, REJECT, extended-matching, pre-matching
 DOMAIN, optimus-ads.amap.com, REJECT, extended-matching, pre-matching
 DOMAIN, pageviewp.icbc.com.cn, REJECT, extended-matching, pre-matching
+DOMAIN, perf.m.jd.com, REJECT, extended-matching, pre-matching
 DOMAIN, pgdt.gtimg.cn, REJECT, extended-matching, pre-matching
 DOMAIN, pl.cp31.ott.cibntv.net, REJECT, extended-matching, pre-matching
 DOMAIN, polaris.zijieapi.com, REJECT, extended-matching, pre-matching
