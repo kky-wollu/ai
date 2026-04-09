@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-04-09 02:52:42
-#!desc=• 规则数量：1575
+#!desc=• 最后更新：2026-04-09 13:58:52
+#!desc=• 规则数量：1573
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -258,7 +258,6 @@ IP-CIDR, 183.201.213.194/24, REJECT, no-resolve, pre-matching
 IP-CIDR, 186.76.76.200/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.107.1.0/24, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.107.63.154/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 203.119.238.0/24, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.119.238.164/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.119.238.63/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 210.13.85.204/32, REJECT, no-resolve, pre-matching
@@ -436,7 +435,6 @@ DOMAIN, bigdata-behaviordata.189.cn, REJECT, extended-matching, pre-matching
 DOMAIN, bootpreload.uve.weibo.com, REJECT, extended-matching, pre-matching
 DOMAIN, bsync3-normal.zijieapi.com, REJECT, extended-matching, pre-matching
 DOMAIN, business.msstatic.com, REJECT, extended-matching, pre-matching
-DOMAIN, cactus.jd.com, REJECT, extended-matching, pre-matching
 DOMAIN, cad.youku.com, REJECT, extended-matching, pre-matching
 DOMAIN, collect.hnair.com, REJECT, extended-matching, pre-matching
 DOMAIN, collect.xiaopeng.com, REJECT, extended-matching, pre-matching
