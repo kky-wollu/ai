@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-04-16 03:31:00
-#!desc=• 规则数量：1574
+#!desc=• 最后更新：2026-04-16 14:02:42
+#!desc=• 规则数量：1576
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -674,6 +674,7 @@ DOMAIN, sdkconfig.ad.xiaomi.com, REJECT, extended-matching, pre-matching
 DOMAIN, sdkconfig.video.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN, sdownload.stargame.com, REJECT, extended-matching, pre-matching
 DOMAIN, sealine.youku.com, REJECT, extended-matching, pre-matching
+DOMAIN, second-floor-pro.pf.jd.com, REJECT, extended-matching, pre-matching
 DOMAIN, securemetrics.apple.com, REJECT, extended-matching, pre-matching
 DOMAIN, sensors.umetrip.com.cn, REJECT, extended-matching, pre-matching
 DOMAIN, serveraddr.service.kugou.com, REJECT, extended-matching, pre-matching
@@ -692,6 +693,7 @@ DOMAIN, stat.meitudata.com, REJECT, extended-matching, pre-matching
 DOMAIN, stat.y.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN, stat.youpin.mi.com, REJECT, extended-matching, pre-matching
 DOMAIN, statistic.live.126.net, REJECT, extended-matching, pre-matching
+DOMAIN, storage23.360buyimg.com, REJECT, extended-matching, pre-matching
 DOMAIN, stun1.douyucdn.cn, REJECT, extended-matching, pre-matching
 DOMAIN, stun1.qvb.qcloud.com, REJECT, extended-matching, pre-matching
 DOMAIN, sugar.zhihu.com, REJECT, extended-matching, pre-matching
