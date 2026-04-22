@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-04-21 13:58:33
-#!desc=• 规则数量：1574
+#!desc=• 最后更新：2026-04-22 03:25:28
+#!desc=• 规则数量：1575
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -672,6 +672,7 @@ DOMAIN, sdk.tianmu.mobi, REJECT, extended-matching, pre-matching
 DOMAIN, sdk1xyajs.data.kuiniuca.com, REJECT, extended-matching, pre-matching
 DOMAIN, sdkconfig.ad.xiaomi.com, REJECT, extended-matching, pre-matching
 DOMAIN, sdkconfig.video.qq.com, REJECT, extended-matching, pre-matching
+DOMAIN, sdkfp.jd.com, REJECT, extended-matching, pre-matching
 DOMAIN, sdownload.stargame.com, REJECT, extended-matching, pre-matching
 DOMAIN, sealine.youku.com, REJECT, extended-matching, pre-matching
 DOMAIN, second-floor-pro.pf.jd.com, REJECT, extended-matching, pre-matching
