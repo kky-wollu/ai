@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-04-28 14:29:03
-#!desc=• 规则数量：1577
+#!desc=• 最后更新：2026-04-29 03:44:22
+#!desc=• 规则数量：1579
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -219,6 +219,7 @@ IP-CIDR, 101.35.212.35/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 103.143.160.209/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 103.37.155.60/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 103.41.167.237/32, REJECT, no-resolve, pre-matching
+IP-CIDR, 103.63.160.80/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 111.206.98.63/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 111.29.42.213/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 114.110.96.0/24, REJECT, no-resolve, pre-matching
@@ -474,6 +475,7 @@ DOMAIN, dsp-x.jd.com, REJECT, extended-matching, pre-matching
 DOMAIN, dsp.fcbox.com, REJECT, extended-matching, pre-matching
 DOMAIN, duclick.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN, dwtracking.jk.cn, REJECT, extended-matching, pre-matching
+DOMAIN, dxlvs.meituan.com, REJECT, extended-matching, pre-matching
 DOMAIN, dynamicf.sankuai.com, REJECT, extended-matching, pre-matching
 DOMAIN, easytomessage.com, REJECT, extended-matching, pre-matching
 DOMAIN, eco.taobao.com, REJECT, extended-matching, pre-matching
