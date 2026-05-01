@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-05-01 03:57:55
-#!desc=• 规则数量：1579
+#!desc=• 最后更新：2026-05-01 13:41:20
+#!desc=• 规则数量：1583
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -277,6 +277,7 @@ IP-CIDR, 59.82.113.219/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.113.8/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.120.33/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.121.172/32, REJECT, no-resolve, pre-matching
+IP-CIDR, 59.82.121.216/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.121.72/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.133.78/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.14.1/32, REJECT, no-resolve, pre-matching
@@ -291,6 +292,7 @@ IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT, no-resolve, pre-matc
 IP-CIDR6, 2402:db40:5100:1011::5/128, REJECT, no-resolve, pre-matching
 DOMAIN, a.cpic.com.cn, REJECT, extended-matching, pre-matching
 DOMAIN, aaid.uyunad.com, REJECT, extended-matching, pre-matching
+DOMAIN, abapi.hellobike.com, REJECT, extended-matching, pre-matching
 DOMAIN, abtest3-misc.zijieapi.com, REJECT, extended-matching, pre-matching
 DOMAIN, acdn.adnxs.com, REJECT, extended-matching, pre-matching
 DOMAIN, activity.video.qq.com, REJECT, extended-matching, pre-matching
@@ -556,6 +558,7 @@ DOMAIN, info4.video.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN, info6.video.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN, init.sms.mob.com, REJECT, extended-matching, pre-matching
 DOMAIN, init.supersonicads.com, REJECT, extended-matching, pre-matching
+DOMAIN, ip.hellobike.com, REJECT, extended-matching, pre-matching
 DOMAIN, ipv4.music.163.com, REJECT, extended-matching, pre-matching
 DOMAIN, ipv6.music.163.com, REJECT, extended-matching, pre-matching
 DOMAIN, iqiyim.adtrack.enlightent.cn, REJECT, extended-matching, pre-matching
@@ -1542,6 +1545,7 @@ DOMAIN-KEYWORD, api.sobot.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, app.adjust, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, applogapi.autohome.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, asiad.byteactivity, REJECT, extended-matching, pre-matching
+DOMAIN-KEYWORD, baichuan.taobao.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, bdsp.x.jd.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, biz.weibo.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, bjimp.voiceads.cn, REJECT, extended-matching, pre-matching
