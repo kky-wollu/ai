@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-05-08 03:37:39
-#!desc=• 规则数量：1595
+#!desc=• 最后更新：2026-05-08 14:04:29
+#!desc=• 规则数量：1589
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -259,13 +259,8 @@ IP-CIDR, 183.201.213.194/24, REJECT, no-resolve, pre-matching
 IP-CIDR, 186.76.76.200/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.107.1.0/24, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.107.63.154/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 203.119.204.80/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 203.119.206.8/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 203.119.206.9/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.119.212.22/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.119.238.164/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 203.119.238.194/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 203.119.238.240/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.119.238.48/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.119.238.63/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 210.13.85.204/32, REJECT, no-resolve, pre-matching
@@ -531,7 +526,6 @@ DOMAIN, hdns.ksyun.com, REJECT, extended-matching, pre-matching
 DOMAIN, hlx.meituan.com, REJECT, extended-matching, pre-matching
 DOMAIN, hmma.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN, httpdns.baidubce.com, REJECT, extended-matching, pre-matching
-DOMAIN, httpdns.bilivideo.com, REJECT, extended-matching, pre-matching
 DOMAIN, httpdns.yunxindns.com, REJECT, extended-matching, pre-matching
 DOMAIN, httpdnsmultiapi.meituan.com, REJECT, extended-matching, pre-matching
 DOMAIN, httpdnsmultiapivip.meituan.com, REJECT, extended-matching, pre-matching
