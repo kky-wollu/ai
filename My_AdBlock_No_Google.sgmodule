@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-05-10 13:42:13
-#!desc=• 规则数量：1589
+#!desc=• 最后更新：2026-05-11 04:05:37
+#!desc=• 规则数量：1594
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -260,6 +260,7 @@ IP-CIDR, 186.76.76.200/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.107.1.0/24, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.107.63.154/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.119.212.22/32, REJECT, no-resolve, pre-matching
+IP-CIDR, 203.119.238.15/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.119.238.164/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.119.238.48/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.119.238.63/32, REJECT, no-resolve, pre-matching
@@ -282,6 +283,7 @@ IP-CIDR, 59.82.120.33/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.121.172/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.121.216/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.121.72/32, REJECT, no-resolve, pre-matching
+IP-CIDR, 59.82.122.151/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.133.78/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.14.1/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.14.161/32, REJECT, no-resolve, pre-matching
@@ -309,6 +311,7 @@ DOMAIN, ad-h5-station-cdn.soulapp.cn, REJECT, extended-matching, pre-matching
 DOMAIN, ad-r.soulapp.cn, REJECT, extended-matching, pre-matching
 DOMAIN, ad-reward.soulapp.cn, REJECT, extended-matching, pre-matching
 DOMAIN, ad-stat.ksosoft.com, REJECT, extended-matching, pre-matching
+DOMAIN, ad-track.fliggy.com, REJECT, extended-matching, pre-matching
 DOMAIN, ad.12306.cn, REJECT, extended-matching, pre-matching
 DOMAIN, ad.21cn.com, REJECT, extended-matching, pre-matching
 DOMAIN, ad.api.moji.com, REJECT, extended-matching, pre-matching
@@ -397,6 +400,8 @@ DOMAIN, al.autohome.com.cn, REJECT, extended-matching, pre-matching
 DOMAIN, als.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN, amap-aos-info-nogw.amap.com, REJECT, extended-matching, pre-matching
 DOMAIN, amdc-sibling.alipay.com.cn, REJECT, extended-matching, pre-matching
+DOMAIN, amdc-thirdparty.alipay.com, REJECT, extended-matching, pre-matching
+DOMAIN, amdc-v6.alipaydns.com, REJECT, extended-matching, pre-matching
 DOMAIN, amdc.alipay.com, REJECT, extended-matching, pre-matching
 DOMAIN, amdc.m.youku.com, REJECT, extended-matching, pre-matching
 DOMAIN, analytics-api.smzdm.com, REJECT, extended-matching, pre-matching
