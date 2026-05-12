@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-05-12 03:49:19
-#!desc=• 规则数量：1593
+#!desc=• 最后更新：2026-05-12 14:38:07
+#!desc=• 规则数量：1594
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -1389,6 +1389,7 @@ DOMAIN-SUFFIX, sestat.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, setting.snswin.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, shadu.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, shouji.sougou.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, shujupie.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, shuzilm.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, simba.m.taobao.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, slog.sina.com.cn, REJECT, extended-matching, pre-matching
