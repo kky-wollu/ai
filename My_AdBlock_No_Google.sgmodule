@@ -2,7 +2,7 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-05-14 14:29:11
+#!desc=• 最后更新：2026-05-15 04:01:28
 #!desc=• 规则数量：1596
 #!author=Auto Build
 #!tag=去广告
@@ -399,8 +399,6 @@ DOMAIN, al.autohome.com.cn, REJECT, extended-matching, pre-matching
 DOMAIN, als.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN, amap-aos-info-nogw.amap.com, REJECT, extended-matching, pre-matching
 DOMAIN, amdc-sibling.alipay.com.cn, REJECT, extended-matching, pre-matching
-DOMAIN, amdc-thirdparty.alipay.com, REJECT, extended-matching, pre-matching
-DOMAIN, amdc-v6.alipaydns.com, REJECT, extended-matching, pre-matching
 DOMAIN, amdc.alipay.com, REJECT, extended-matching, pre-matching
 DOMAIN, amdc.m.youku.com, REJECT, extended-matching, pre-matching
 DOMAIN, analytics-api.smzdm.com, REJECT, extended-matching, pre-matching
@@ -424,6 +422,7 @@ DOMAIN, apis.alenable.com, REJECT, extended-matching, pre-matching
 DOMAIN, apm-native.xiaohongshu.com, REJECT, extended-matching, pre-matching
 DOMAIN, apm.gotokeep.com, REJECT, extended-matching, pre-matching
 DOMAIN, apm.pinduoduo.com, REJECT, extended-matching, pre-matching
+DOMAIN, apmgw.hellobike.com, REJECT, extended-matching, pre-matching
 DOMAIN, apmplus.volces.com, REJECT, extended-matching, pre-matching
 DOMAIN, app-ad.variflight.com, REJECT, extended-matching, pre-matching
 DOMAIN, app-analytics-services.com, REJECT, extended-matching, pre-matching
@@ -451,6 +450,7 @@ DOMAIN, bootpreload.uve.weibo.com, REJECT, extended-matching, pre-matching
 DOMAIN, bsync3-normal.zijieapi.com, REJECT, extended-matching, pre-matching
 DOMAIN, business.msstatic.com, REJECT, extended-matching, pre-matching
 DOMAIN, cad.youku.com, REJECT, extended-matching, pre-matching
+DOMAIN, cdn.hellobike.com, REJECT, extended-matching, pre-matching
 DOMAIN, collect.hnair.com, REJECT, extended-matching, pre-matching
 DOMAIN, collect.xiaopeng.com, REJECT, extended-matching, pre-matching
 DOMAIN, conf-darwin.xycdn.com, REJECT, extended-matching, pre-matching
