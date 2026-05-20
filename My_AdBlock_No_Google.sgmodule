@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-05-19 15:38:14
-#!desc=• 规则数量：1594
+#!desc=• 最后更新：2026-05-20 04:09:45
+#!desc=• 规则数量：1592
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -259,7 +259,6 @@ IP-CIDR, 183.201.213.194/24, REJECT, no-resolve, pre-matching
 IP-CIDR, 186.76.76.200/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.107.1.0/24, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.107.63.154/32, REJECT, no-resolve, pre-matching
-IP-CIDR, 203.119.204.195/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.119.212.22/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.119.238.164/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.119.238.63/32, REJECT, no-resolve, pre-matching
@@ -278,7 +277,6 @@ IP-CIDR, 59.82.113.219/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.113.8/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.120.0/24, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.121.0/24, REJECT, no-resolve, pre-matching
-IP-CIDR, 59.82.122.151/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.133.0/24, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.14.1/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 59.82.14.161/32, REJECT, no-resolve, pre-matching
