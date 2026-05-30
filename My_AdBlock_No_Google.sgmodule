@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-05-30 03:59:47
-#!desc=• 规则数量：1599
+#!desc=• 最后更新：2026-05-30 13:53:54
+#!desc=• 规则数量：1600
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -1586,6 +1586,7 @@ DOMAIN-KEYWORD, medicine.lanjiyin.com.cn, REJECT, extended-matching, pre-matchin
 DOMAIN-KEYWORD, mpos-pic.helipay.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, nbcollect.kugou.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, nbcollectretry.kugou.com, REJECT, extended-matching, pre-matching
+DOMAIN-KEYWORD, o2o-ad-dev.oss-cn, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, ossp.voicecloud.cn, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, p3.pstatp.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, pangolin-sdk-toutiao, REJECT, extended-matching, pre-matching
