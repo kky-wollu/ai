@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-06-04 04:46:29
-#!desc=• 规则数量：1601
+#!desc=• 最后更新：2026-06-04 15:30:30
+#!desc=• 规则数量：1606
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -194,6 +194,11 @@ IP-CIDR,115.236.121.195/32,REJECT,no-resolve
 DOMAIN,iadmusicmat.music.126.net,REJECT
 DOMAIN,iadmat.nosdn.127.net,REJECT
 DOMAIN,iadmatapk.nosdn.127.net,REJECT
+DOMAIN, ads-img-qc.xhscdn.com, REJECT
+DOMAIN, ads-img-al.xhscdn.com, REJECT
+DOMAIN, ads-video-al.xhscdn.com, REJECT
+DOMAIN, ads-video-qc.xhscdn.com, REJECT
+DOMAIN, t-ads.xiaohongshu.com, REJECT
 AND,((PROTOCOL,QUIC),(DOMAIN-SUFFIX,xiaohongshu.com)),REJECT
 AND,((URL-REGEX,"^http:\/\/.+\/amdc\/mobileDispatch"),(USER-AGENT,"%E9%97%B2%E9%B1%BC*")),REJECT
 DOMAIN-KEYWORD,iyes.youku.com,REJECT
