@@ -2,7 +2,7 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-07-03 03:51:21
+#!desc=• 最后更新：2026-07-03 14:22:25
 #!desc=• 规则数量：1607
 #!author=Auto Build
 #!tag=去广告
