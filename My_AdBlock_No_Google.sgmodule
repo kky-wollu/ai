@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-07-25 13:47:45
-#!desc=• 规则数量：1597
+#!desc=• 最后更新：2026-07-26 03:33:42
+#!desc=• 规则数量：1598
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -1520,6 +1520,7 @@ DOMAIN-SUFFIX, wxs.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, wxsmsdy.video.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, wxsnsdy.tc.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, xdcs-collector.ximalaya.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, xinstall.top, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, xwpbj.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, ydjs.zol.com.cn, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, ydpushserver.youdao.com, REJECT, extended-matching, pre-matching
