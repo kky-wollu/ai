@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-08-26 13:03:11
-#!desc=• 规则数量：1600
+#!desc=• 最后更新：2026-08-27 08:42:30
+#!desc=• 规则数量：1599
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -453,7 +453,6 @@ DOMAIN, content-open.douyin.com, REJECT, extended-matching, pre-matching
 DOMAIN, corp.meitu.com, REJECT, extended-matching, pre-matching
 DOMAIN, counter.kingsoft.com, REJECT, extended-matching, pre-matching
 DOMAIN, counter.ksosoft.com, REJECT, extended-matching, pre-matching
-DOMAIN, cpush.ctrip.com, REJECT, extended-matching, pre-matching
 DOMAIN, cpush.trip.com, REJECT, extended-matching, pre-matching
 DOMAIN, cr-status.iqiyi.com, REJECT, extended-matching, pre-matching
 DOMAIN, crash2.zhihu.com, REJECT, extended-matching, pre-matching
