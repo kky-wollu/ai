@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-08-30 16:29:00
-#!desc=• 规则数量：1599
+#!desc=• 最后更新：2026-08-31 04:58:13
+#!desc=• 规则数量：1600
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -1550,6 +1550,7 @@ DOMAIN-KEYWORD, 1258344696.file.myqcloud.com, REJECT, extended-matching, pre-mat
 DOMAIN-KEYWORD, a3.bytecdn.cn, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, a3.pstatp.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, ad-sign.byteimg.com, REJECT, extended-matching, pre-matching
+DOMAIN-KEYWORD, adashx.ut.fliggy.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, adproxy.autohome.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, ads.amap.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, ads.microsoft.com, REJECT, extended-matching, pre-matching
