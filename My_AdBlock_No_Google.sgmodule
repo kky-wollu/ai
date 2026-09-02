@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-09-01 16:24:41
-#!desc=• 规则数量：1600
+#!desc=• 最后更新：2026-09-02 03:59:23
+#!desc=• 规则数量：1603
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -445,6 +445,7 @@ DOMAIN, bsync3-normal.zijieapi.com, REJECT, extended-matching, pre-matching
 DOMAIN, business.msstatic.com, REJECT, extended-matching, pre-matching
 DOMAIN, cad.youku.com, REJECT, extended-matching, pre-matching
 DOMAIN, cdn.hellobike.com, REJECT, extended-matching, pre-matching
+DOMAIN, cdn.ynuf.aliapp.org, REJECT, extended-matching, pre-matching
 DOMAIN, collect.hnair.com, REJECT, extended-matching, pre-matching
 DOMAIN, collect.xiaopeng.com, REJECT, extended-matching, pre-matching
 DOMAIN, conf-darwin.xycdn.com, REJECT, extended-matching, pre-matching
@@ -520,8 +521,10 @@ DOMAIN, ggx.cmvideo.cn, REJECT, extended-matching, pre-matching
 DOMAIN, ggx03.miguvideo.com, REJECT, extended-matching, pre-matching
 DOMAIN, goblin.hupu.com, REJECT, extended-matching, pre-matching
 DOMAIN, gorgon.youdao.com, REJECT, extended-matching, pre-matching
+DOMAIN, h-adashx.ut.ele.me, REJECT, extended-matching, pre-matching
 DOMAIN, hc-ssp.sm.cn, REJECT, extended-matching, pre-matching
 DOMAIN, hdns.ksyun.com, REJECT, extended-matching, pre-matching
+DOMAIN, highway-tb.ele.me, REJECT, extended-matching, pre-matching
 DOMAIN, hlx.meituan.com, REJECT, extended-matching, pre-matching
 DOMAIN, hmma.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN, httpdns.baidubce.com, REJECT, extended-matching, pre-matching
