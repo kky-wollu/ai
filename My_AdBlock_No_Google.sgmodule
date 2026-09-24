@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-09-23 16:36:26
-#!desc=• 规则数量：4175
+#!desc=• 最后更新：2026-09-24 04:15:11
+#!desc=• 规则数量：4176
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -2913,6 +2913,7 @@ DOMAIN, ads-img-qc.xhscdn.com, REJECT, extended-matching, pre-matching
 DOMAIN, ads-shopping.shouqianba.com, REJECT, extended-matching, pre-matching
 DOMAIN, ads-video-al.xhscdn.com, REJECT, extended-matching, pre-matching
 DOMAIN, ads-video-qc.xhscdn.com, REJECT, extended-matching, pre-matching
+DOMAIN, ads-vp5.xhscdn.com, REJECT, extended-matching, pre-matching
 DOMAIN, ads.auctions.yahoo.com, REJECT, extended-matching, pre-matching
 DOMAIN, ads.babytree.com, REJECT, extended-matching, pre-matching
 DOMAIN, ads.cup.com.cn, REJECT, extended-matching, pre-matching
