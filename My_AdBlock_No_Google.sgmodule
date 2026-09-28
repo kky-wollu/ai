@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-09-27 16:46:17
-#!desc=• 规则数量：4176
+#!desc=• 最后更新：2026-09-28 04:52:28
+#!desc=• 规则数量：4179
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -3041,6 +3041,7 @@ DOMAIN, dflow.bz.mgtv.com, REJECT, extended-matching, pre-matching
 DOMAIN, dig.bdurl.net, REJECT, extended-matching, pre-matching
 DOMAIN, dig.zjurl.cn, REJECT, extended-matching, pre-matching
 DOMAIN, discover.300hu.com, REJECT, extended-matching, pre-matching
+DOMAIN, djad.nmgyhxxkj.cn, REJECT, extended-matching, pre-matching
 DOMAIN, dm.bytedance.com, REJECT, extended-matching, pre-matching
 DOMAIN, dm.pstatp.com, REJECT, extended-matching, pre-matching
 DOMAIN, dns.jd.com, REJECT, extended-matching, pre-matching
@@ -3224,6 +3225,7 @@ DOMAIN, polaris.zijieapi.com, REJECT, extended-matching, pre-matching
 DOMAIN, popup.dushu365.com, REJECT, extended-matching, pre-matching
 DOMAIN, pp-cdnfile2pcdn.msstatic.com, REJECT, extended-matching, pre-matching
 DOMAIN, pre-acs.youku.com, REJECT, extended-matching, pre-matching
+DOMAIN, pro.dajuhl.com, REJECT, extended-matching, pre-matching
 DOMAIN, ptom.caohua.com, REJECT, extended-matching, pre-matching
 DOMAIN, push.chsi.com.cn, REJECT, extended-matching, pre-matching
 DOMAIN, qwapi.apple.com, REJECT, extended-matching, pre-matching
@@ -4115,6 +4117,7 @@ DOMAIN-SUFFIX, zemanta.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, zhengxiaoliu.top, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, znsv.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN-SUFFIX, zymo.mps.weibo.com, REJECT, extended-matching, pre-matching
+DOMAIN-SUFFIX, zzspider.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, -ad.byteoversea.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, -adsystem.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, -analytics.bytescm.com, REJECT, extended-matching, pre-matching
