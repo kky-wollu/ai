@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-10-15 16:43:14
-#!desc=• 规则数量：4180
+#!desc=• 最后更新：2026-10-16 04:04:42
+#!desc=• 规则数量：4182
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -2909,6 +2909,7 @@ DOMAIN, admarket.21cn.com, REJECT, extended-matching, pre-matching
 DOMAIN, admarketing.yahoo.net, REJECT, extended-matching, pre-matching
 DOMAIN, admusicpic.music.126.net, REJECT, extended-matching, pre-matching
 DOMAIN, adpinpai.video.weibocdn.com, REJECT, extended-matching, pre-matching
+DOMAIN, ads-img-al.xhscdn.com, REJECT, extended-matching, pre-matching
 DOMAIN, ads-img-qc.xhscdn.com, REJECT, extended-matching, pre-matching
 DOMAIN, ads-shopping.shouqianba.com, REJECT, extended-matching, pre-matching
 DOMAIN, ads-video-al.xhscdn.com, REJECT, extended-matching, pre-matching
@@ -4132,6 +4133,7 @@ DOMAIN-KEYWORD, a3.bytecdn.cn, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, a3.pstatp.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, ad-sign.byteimg.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, adproxy.autohome.com, REJECT, extended-matching, pre-matching
+DOMAIN-KEYWORD, ads-splash-i, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, ads.amap.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, ads.microsoft.com, REJECT, extended-matching, pre-matching
 DOMAIN-KEYWORD, ads.msn.com, REJECT, extended-matching, pre-matching
