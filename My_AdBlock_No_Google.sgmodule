@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-10-25 04:10:54
-#!desc=• 规则数量：4182
+#!desc=• 最后更新：2026-10-25 15:53:58
+#!desc=• 规则数量：4177
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -1759,24 +1759,6 @@ DOMAIN,iadmusicmat.music.126.net,REJECT
 DOMAIN,iadmat.nosdn.127.net,REJECT
 DOMAIN,iadmatapk.nosdn.127.net,REJECT
 DOMAIN,httpdns.music.163.com,REJECT
-AND,((URL-REGEX,"^http:\/\/.+\/amdc\/mobileDispatch"),(USER-AGENT,"%E9%97%B2%E9%B1%BC*")),REJECT
-DOMAIN-KEYWORD,iyes.youku.com,REJECT
-DOMAIN, ads-img-qc.xhscdn.com, REJECT
-DOMAIN, ads-img-al.xhscdn.com, REJECT
-DOMAIN, ads-video-al.xhscdn.com, REJECT
-DOMAIN, ads-video-qc.xhscdn.com, REJECT
-DOMAIN, t-ads.xiaohongshu.com, REJECT
-AND,((PROTOCOL,QUIC),(DOMAIN-SUFFIX,xiaohongshu.com)),REJECT
-DOMAIN,et.ykccn.com,REJECT
-DOMAIN,appcloud.zhihu.com,REJECT
-DOMAIN,appcloud2.in.zhihu.com,REJECT
-DOMAIN,crash2.zhihu.com,REJECT
-DOMAIN,mqtt.zhihu.com,REJECT
-DOMAIN,sugar.zhihu.com,REJECT
-DOMAIN,zxid-m.mobileservice.cn,REJECT
-IP-CIDR,103.41.167.237/32,REJECT,no-resolve
-IP-CIDR,118.89.204.198/32,REJECT,no-resolve
-IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 DOMAIN,adstats.tencentmusic.com,REJECT
 DOMAIN,ad.tencentmusic.com,REJECT
 DOMAIN,adcdn.tencentmusic.com,REJECT
@@ -2362,11 +2344,14 @@ DOMAIN-SUFFIX,adse.ximalaya.com,REJECT
 DOMAIN-SUFFIX,adse-v2.ximalaya.com,REJECT
 DOMAIN-SUFFIX,open.ximalaya.com,REJECT
 DOMAIN-SUFFIX,upos-app.ximalaya.com,REJECT
+AND,((URL-REGEX,"^http:\/\/.+\/amdc\/mobileDispatch"),(USER-AGENT,"%E9%97%B2%E9%B1%BC*")),REJECT
+DOMAIN-KEYWORD,iyes.youku.com,REJECT
 DOMAIN,mistat.xiaomi.com,REJECT
 DOMAIN,ads-img-qc.xhscdn.com,REJECT
 DOMAIN,ads-video-al.xhscdn.com,REJECT
 DOMAIN,ads-video-qc.xhscdn.com,REJECT
 DOMAIN,t-ads.xiaohongshu.com,REJECT
+AND,((PROTOCOL,QUIC),(DOMAIN-SUFFIX,xiaohongshu.com)),REJECT
 DOMAIN-KEYWORD,mpos-pic.helipay.com,REJECT
 DOMAIN-KEYWORD,XiaoQiang,REJECT
 DOMAIN-SUFFIX,ad.mi.com,REJECT
@@ -2663,6 +2648,7 @@ DOMAIN-SUFFIX,mhdtestks3.1391.com,REJECT
 DOMAIN-SUFFIX,mhdufile.1391.com,REJECT
 DOMAIN-SUFFIX,mhjk.1391.com,REJECT
 DOMAIN-SUFFIX,sqtpks3.1391.com,REJECT
+DOMAIN,et.ykccn.com,REJECT
 DOMAIN,ads.95516.com,REJECT
 DOMAIN,cm-10-138.getui.com,REJECT
 DOMAIN,sdk.open.talk.getui.net,REJECT
@@ -2715,7 +2701,16 @@ DOMAIN,ads.yahoo.de,REJECT
 DOMAIN-SUFFIX,gt.yy.com,REJECT
 DOMAIN-SUFFIX,ttayy.cn,REJECT
 DOMAIN-SUFFIX,zhengxiaoliu.top,REJECT
+DOMAIN,appcloud.zhihu.com,REJECT
+DOMAIN,appcloud2.in.zhihu.com,REJECT
+DOMAIN,mqtt.zhihu.com,REJECT
+DOMAIN,sugar.zhihu.com,REJECT
+DOMAIN,crash2.zhihu.com,REJECT
 DOMAIN,118.89.204.198,REJECT
+IP-CIDR,118.89.204.198/32,REJECT,no-resolve
+IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
+DOMAIN,zxid-m.mobileservice.cn,REJECT
+IP-CIDR,103.41.167.237/32,REJECT,no-resolve
 DOMAIN-SUFFIX,apppv.zol.com.cn,REJECT
 DOMAIN-SUFFIX,cpro.zol.com.cn,REJECT
 DOMAIN-SUFFIX,dynamic.zol.com.cn,REJECT
