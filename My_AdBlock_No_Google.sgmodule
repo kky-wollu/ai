@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-10-29 05:18:42
-#!desc=• 规则数量：4177
+#!desc=• 最后更新：2026-10-29 18:18:24
+#!desc=• 规则数量：4178
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -2981,6 +2981,7 @@ DOMAIN, apiinit.amap.com, REJECT, extended-matching, pre-matching
 DOMAIN, apis.alenable.com, REJECT, extended-matching, pre-matching
 DOMAIN, apm-api.huazhu.com, REJECT, extended-matching, pre-matching
 DOMAIN, apm-native.xiaohongshu.com, REJECT, extended-matching, pre-matching
+DOMAIN, apm.abchina.com.cn, REJECT, extended-matching, pre-matching
 DOMAIN, apm.gotokeep.com, REJECT, extended-matching, pre-matching
 DOMAIN, apm.pinduoduo.com, REJECT, extended-matching, pre-matching
 DOMAIN, apmgw.hellobike.com, REJECT, extended-matching, pre-matching
