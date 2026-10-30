@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-10-30 05:18:04
-#!desc=• 规则数量：4180
+#!desc=• 最后更新：2026-10-30 17:54:08
+#!desc=• 规则数量：4178
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -1755,10 +1755,6 @@ AND,((IP-CIDR,220.243.141.0/32,no-resolve),(DEST-PORT,6443)),REJECT
 DOMAIN,ad.qingting.fm,REJECT
 DOMAIN,adlaunch.qingting.fm,REJECT
 DOMAIN,ad-cdn.qingting.fm,REJECT
-DOMAIN,iadmusicmat.music.126.net,REJECT
-DOMAIN,iadmat.nosdn.127.net,REJECT
-DOMAIN,iadmatapk.nosdn.127.net,REJECT
-DOMAIN,httpdns.music.163.com,REJECT
 DOMAIN,adstats.tencentmusic.com,REJECT
 DOMAIN,ad.tencentmusic.com,REJECT
 DOMAIN,adcdn.tencentmusic.com,REJECT
@@ -2206,6 +2202,8 @@ DOMAIN,admusicpic.music.126.net,REJECT
 DOMAIN,g1.163.com,REJECT
 DOMAIN,gorgon.youdao.com,REJECT
 DOMAIN,iad.g.163.com,REJECT
+DOMAIN,iadmat.nosdn.127.net,REJECT
+DOMAIN,iadmusicmat.music.126.net,REJECT
 DOMAIN,iadmusicmatvideo.music.126.net,REJECT
 DOMAIN,impservice.dictapp.youdao.com,REJECT
 DOMAIN,impservice.youdao.com,REJECT
@@ -2288,6 +2286,7 @@ DOMAIN-SUFFIX,impservicetest.dictapp.youdao.com,REJECT
 DOMAIN-SUFFIX,clkservice.mail.youdao.com,REJECT
 DOMAIN-SUFFIX,clkservice.union.youdao.com,REJECT
 DOMAIN-SUFFIX,log.yex.youdao.com,REJECT
+DOMAIN,httpdns.music.163.com,REJECT
 DOMAIN,httpdns-sdk.n.netease.com,REJECT
 DOMAIN,httpdns.yunxindns.com,REJECT
 DOMAIN,lofter.httpdns.c.163.com,REJECT
@@ -2296,6 +2295,7 @@ IP-CIDR,59.111.239.61/32,REJECT,no-resolve
 IP-CIDR,59.111.239.62/32,REJECT,no-resolve
 IP-CIDR,115.236.121.51/32,REJECT,no-resolve
 IP-CIDR,115.236.121.195/32,REJECT,no-resolve
+DOMAIN,iadmatapk.nosdn.127.net,REJECT
 DOMAIN-SUFFIX,n-st.vip.com,REJECT
 DOMAIN-SUFFIX,api.union.vip.com,REJECT
 DOMAIN-SUFFIX,ms.vipstatic.com,REJECT
@@ -3195,10 +3195,8 @@ DOMAIN, mobads-pre-config.cdn.bcebos.com, REJECT, extended-matching, pre-matchin
 DOMAIN, mobads.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN, mobiledc.stable.alipay.net, REJECT, extended-matching, pre-matching
 DOMAIN, mobilelog.kugou.com, REJECT, extended-matching, pre-matching
-DOMAIN, mobs.dl.bankcomm.com, REJECT, extended-matching, pre-matching
 DOMAIN, mon.zijieapi.com, REJECT, extended-matching, pre-matching
 DOMAIN, mon11-misc.fqnovel.com, REJECT, extended-matching, pre-matching
-DOMAIN, monitor.bankcomm.cn, REJECT, extended-matching, pre-matching
 DOMAIN, monitor.music.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN, mqtt.zhihu.com, REJECT, extended-matching, pre-matching
 DOMAIN, msmp.abchina.com.cn, REJECT, extended-matching, pre-matching
