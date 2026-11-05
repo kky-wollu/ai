@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-11-04 19:37:15
-#!desc=• 规则数量：4178
+#!desc=• 最后更新：2026-11-05 06:05:59
+#!desc=• 规则数量：4181
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -2814,6 +2814,7 @@ IP-CIDR, 203.107.1.0/24, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.107.63.154/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.119.212.22/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.119.238.164/32, REJECT, no-resolve, pre-matching
+IP-CIDR, 203.119.238.25/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 203.119.238.63/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 210.13.85.204/32, REJECT, no-resolve, pre-matching
 IP-CIDR, 43.160.156.164/32, REJECT, no-resolve, pre-matching
@@ -3209,6 +3210,7 @@ DOMAIN, nadvideo2.baidu.com, REJECT, extended-matching, pre-matching
 DOMAIN, news.ssp.qq.com, REJECT, extended-matching, pre-matching
 DOMAIN, nex.163.com, REJECT, extended-matching, pre-matching
 DOMAIN, nsclick.baidu.com, REJECT, extended-matching, pre-matching
+DOMAIN, o.alicdn.com, REJECT, extended-matching, pre-matching
 DOMAIN, o2o-ad-log-gateway.alibaba.com, REJECT, extended-matching, pre-matching
 DOMAIN, ocsp.pki.goog, REJECT, extended-matching, pre-matching
 DOMAIN, open-pixon.ads-pixiv.net, REJECT, extended-matching, pre-matching
@@ -3218,6 +3220,7 @@ DOMAIN, optimus-ads.amap.com, REJECT, extended-matching, pre-matching
 DOMAIN, pageviewp.icbc.com.cn, REJECT, extended-matching, pre-matching
 DOMAIN, perf.m.jd.com, REJECT, extended-matching, pre-matching
 DOMAIN, pgdt.gtimg.cn, REJECT, extended-matching, pre-matching
+DOMAIN, pigeon.alicdn.com, REJECT, extended-matching, pre-matching
 DOMAIN, pl.cp31.ott.cibntv.net, REJECT, extended-matching, pre-matching
 DOMAIN, polaris.zijieapi.com, REJECT, extended-matching, pre-matching
 DOMAIN, popup.dushu365.com, REJECT, extended-matching, pre-matching
