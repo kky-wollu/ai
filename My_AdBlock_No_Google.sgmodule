@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-11-15 18:41:14
-#!desc=• 规则数量：4184
+#!desc=• 最后更新：2026-11-16 05:52:56
+#!desc=• 规则数量：4186
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -3059,6 +3059,7 @@ DOMAIN, easytomessage.com, REJECT, extended-matching, pre-matching
 DOMAIN, eco.taobao.com, REJECT, extended-matching, pre-matching
 DOMAIN, ef-dongfeng.tanx.com, REJECT, extended-matching, pre-matching
 DOMAIN, effect.snssdk.com, REJECT, extended-matching, pre-matching
+DOMAIN, emapm.eastmoney.com, REJECT, extended-matching, pre-matching
 DOMAIN, emdcadvertise.eastmoney.com, REJECT, extended-matching, pre-matching
 DOMAIN, emdcadvertisepj.eastmoney.com, REJECT, extended-matching, pre-matching
 DOMAIN, emma-414870e223.huodonghezi.com, REJECT, extended-matching, pre-matching
@@ -3285,6 +3286,7 @@ DOMAIN, statistic.live.126.net, REJECT, extended-matching, pre-matching
 DOMAIN, stun1.douyucdn.cn, REJECT, extended-matching, pre-matching
 DOMAIN, stun1.qvb.qcloud.com, REJECT, extended-matching, pre-matching
 DOMAIN, sugar.zhihu.com, REJECT, extended-matching, pre-matching
+DOMAIN, swdlcdn.eastmoney.com, REJECT, extended-matching, pre-matching
 DOMAIN, switch.cup.com.cn, REJECT, extended-matching, pre-matching
 DOMAIN, t-ads.xiaohongshu.com, REJECT, extended-matching, pre-matching
 DOMAIN, t-dsp.pinduoduo.com, REJECT, extended-matching, pre-matching
