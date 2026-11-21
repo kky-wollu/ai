@@ -2,8 +2,8 @@
 #!desc=自动合并两个去广告模块，已剔除Google相关规则
 #!desc=• 原始模块1：blockAds.module
 #!desc=• 原始模块2：allAdBlock.sgmodule
-#!desc=• 最后更新：2026-11-21 06:39:11
-#!desc=• 规则数量：4186
+#!desc=• 最后更新：2026-11-21 18:57:54
+#!desc=• 规则数量：4184
 #!author=Auto Build
 #!tag=去广告
 #!basedOn=iOS
@@ -755,7 +755,6 @@ DOMAIN,hmma.baidu.com,REJECT
 DOMAIN,afdconf.baidu.com,REJECT
 DOMAIN,httpdns.baidubce.com,REJECT
 DOMAIN,lc.map.baidu.com,REJECT
-DOMAIN,180.76.76.200,REJECT
 IP-CIDR,180.76.76.200/32,REJECT,no-resolve
 DOMAIN-SUFFIX,admx.baixing.com,REJECT
 DOMAIN-SUFFIX,tu.baixing.com,REJECT
@@ -2706,7 +2705,6 @@ DOMAIN,appcloud2.in.zhihu.com,REJECT
 DOMAIN,mqtt.zhihu.com,REJECT
 DOMAIN,sugar.zhihu.com,REJECT
 DOMAIN,crash2.zhihu.com,REJECT
-DOMAIN,118.89.204.198,REJECT
 IP-CIDR,118.89.204.198/32,REJECT,no-resolve
 IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 DOMAIN,zxid-m.mobileservice.cn,REJECT
